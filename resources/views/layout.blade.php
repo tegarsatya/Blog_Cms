@@ -73,7 +73,7 @@
                     {{-- @foreach ($todos as $todo)
                         {{ $todo->todo }}
                         <hr>
-                    @endforeach --}}
+                        @endforeach --}}
                 </div>
             </div>
         </div>

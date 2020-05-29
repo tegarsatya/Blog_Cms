@@ -18,13 +18,36 @@ Route::get('/', function () {
 });
 
 Route::get('/todo', [
-    'uses'=> 'TodoController@index'
+    'uses'=> 'TodoController@index',
+    'as'  => 'home1'
 ]);
 
 
 Route::post('/create/todo', [
     'uses'=> 'TodoController@store'
 ]);
+
+Route::get('/todo/delete/{id}', [
+    'uses'=> 'TodoController@delete',
+    'as'  => 'todo.delete'
+]);
+
+Route::get('/todo/update/{id}', [
+    'uses'=> 'TodoController@update',
+    'as'  => 'todo.update'
+]);
+
+Route::post('/todo/save/{id}', [
+
+    'uses'=> 'TodoController@save',
+    'as'  => 'todo.save'
+]);
+
+Route::get('/todo/completed/{id}', [
+    'uses'=> 'TodoController@completed',
+    'as'  => 'task.completed'
+]);
+
 
 Auth::routes();
 
